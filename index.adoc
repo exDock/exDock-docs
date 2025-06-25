@@ -1,0 +1,3 @@
+= Welcome to the exDoc: The exDock documentation
+
+Welcome to the exDock docs. Hope you find what you need!
