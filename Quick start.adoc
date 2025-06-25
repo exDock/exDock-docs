@@ -1,0 +1,3 @@
+= Set up an exDock website | Quick start
+
+This article will show you how to quickly start up a new exDock website.
