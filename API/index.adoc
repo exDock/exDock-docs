@@ -1,0 +1,3 @@
+= The exDock API
+
+Here is everything you need to know about the exDock API.

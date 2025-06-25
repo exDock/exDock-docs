@@ -1,0 +1,5 @@
+= The exDock backoffice: everything that you need to now about the backoffice
+
+The backoffice is a standalone part in the exDock ecosystem. Here you'll read everything about the official exDock backoffice.
+
+Since the exDock backoffice works completely via the API, it is completely possible to make your own backoffice. The documentation for that is in the api section
