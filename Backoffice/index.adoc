@@ -2,4 +2,7 @@
 
 The backoffice is a standalone part in the exDock ecosystem. Here you'll read everything about the official exDock backoffice.
 
-Since the exDock backoffice works completely via the API, it is completely possible to make your own backoffice. The documentation for that is in the api section
+Since the exDock backoffice works completely via the API, it is completely possible to make your own backoffice. The documentation for that is in the api section.
+
+The framework used for the exDock backoffice is Flutter.
+This is deployed to web. When desired, it can be compiled to wasm, since we made wasm compilation compatibility a requirement for the backoffice.
