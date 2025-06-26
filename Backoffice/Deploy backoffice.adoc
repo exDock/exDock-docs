@@ -3,11 +3,12 @@
 The backoffice can be deployed to all 6 platforms. In this documentation, we'll only provide necessary details about the deployment process. If you want more control over this, please check out the https://docs.flutter.dev/deployment[Flutter docs about deployment].
 
 == Deploy the exDock backoffice to web
-When you are inside the project, the following commands can be used to compile to web. If you compile to wasm, a javascript version will also be included for all devices on which wasm is not supported. [,bash]
-
-``flutter build web flutter build web --wasm``
-
-The output will be stored in ``/build/web``
+When you are inside the project, the following commands can be used to compile to web. If you compile to wasm, a javascript version will also be included for all devices on which wasm is not supported.
+[,bash]
+----
+flutter build web flutter build web --wasm
+----
+The output will be stored in `/build/web`
 
 == Deploy the exDock backoffice to Android
 To build a distributable Android App Bundle (AAB) for the Google Play Store, use the following command. The AAB format is required by Google Play and includes all your app’s compiled code and resources.
@@ -16,7 +17,7 @@ To build a distributable Android App Bundle (AAB) for the Google Play Store, use
 flutter build appbundle --release
 ----
 
-The output will be located at ``/build/app/outputs/bundle/release/app-release.aab``.
+The output will be located at `/build/app/outputs/bundle/release/app-release.aab`.
 
 For direct installation or internal testing, you can build an APK.
 [,bash]
