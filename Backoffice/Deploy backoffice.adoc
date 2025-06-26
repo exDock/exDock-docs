@@ -1,0 +1,67 @@
+= Deploy the backoffice from source code
+
+The backoffice can be deployed to all 6 platforms. In this documentation, we'll only provide necessary details about the deployment process. If you want more control over this, please check out the https://docs.flutter.dev/deployment[Flutter docs about deployment].
+
+== Deploy the exDock backoffice to web
+When you are inside the project, the following commands can be used to compile to web. If you compile to wasm, a javascript version will also be included for all devices on which wasm is not supported. [,bash]
+
+``flutter build web flutter build web --wasm``
+
+The output will be stored in ``/build/web``
+
+== Deploy the exDock backoffice to Android
+To build a distributable Android App Bundle (AAB) for the Google Play Store, use the following command. The AAB format is required by Google Play and includes all your app’s compiled code and resources.
+[,bash]
+----
+flutter build appbundle --release
+----
+
+The output will be located at ``/build/app/outputs/bundle/release/app-release.aab``.
+
+For direct installation or internal testing, you can build an APK.
+[,bash]
+----
+flutter build apk --release
+----
+This will generate an APK file at `/build/app/outputs/flutter-apk/app-release.apk`. Before distributing, you must sign your app. For detailed instructions on generating and using a signing key, refer to the official Flutter documentation on signing the app.
+
+== Deploy the exDock backoffice to iOS
+To deploy to iOS, you'll need a paid Apple Developer account. The general process involves opening the project's ios directory in Xcode.
+First, build the Flutter application for release:
+[,bash]
+----
+flutter build ios --release
+----
+Then, open the Xcode workspace:
+[,bash]
+----
+open ios/Runner.xcworkspace
+----
+
+Within Xcode, you can then manage code signing and certificates. To distribute your app, you will need to create an archive and upload it to App Store Connect. From there, you can distribute the app to testers via TestFlight or submit it for review for the App Store.
+
+The archived app (.ipa file) can be found in the Xcode Organizer.
+
+== Deploy the exDock backoffice to Windows
+To create an executable for Windows, ensure you have Visual Studio with the "Desktop development with C++" workload installed. Then, run the following command:
+[,bash]
+----
+flutter build windows
+----
+The compiled executable and necessary data files will be placed in `/build/windows/runner/Release/`. You can create a distributable package by creating a zip archive of this directory's contents.
+
+== Deploy the exDock backoffice to macOS
+To build a macOS application, you will need Xcode installed. Use the following command to build the app:
+[,bash]
+----
+flutter build macos
+----
+The output, a .app bundle, will be located in `/build/macos/Build/Products/Release/`. To distribute the application, you can compress the .app file into a zip archive or create a .dmg file. For distribution outside the Mac App Store, you will need to notarize the application.
+
+== Deploy the exDock backoffice to Linux
+For Linux, make sure you have the necessary build tools installed, such as clang, cmake, and gtk3-devel. To build the application, run:
+[,bash]
+----
+flutter build linux
+----
+The output will be located in `/build/linux/<architecture>/release/bundle/`. This directory contains the executable and all the necessary libraries. To distribute your application, you can create a tarball of this directory.
